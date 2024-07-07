@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Playwrite+AU+VIC:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background: #ecf0f3;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    flex-wrap: wrap;
+}
+
+.navBar {
+    list-style: none;
+    position: relative;
+    padding: 12px 20px;
+    display: none;
+}
+
+.open-menu , .close-menu {
+    font-size: 32px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.open-menu {
+    top: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 0px;
+    right: 20px;
+}
+#check {display: none;}
+@media (max-width: 1024px) {
+    .navBar{display: block;}
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right:-100%;
+        transition: all .3s ease-out;
+        z-index: 100;
+        backdrop-filter: blur(5px);
+        padding: 20px 40px;
+        box-shadow: -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    }
+
+.menu li {margin-top: 40px;}
+.menu li div {padding: 20px;}
+.menu .menu-item {
+    border: 1px solid;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+}
+.menu .menu-item.active {background: blueviolet; color: white; letter-spacing: 4px; box-shadow: inset 0px 0px 6px 4px;}
+#check:checked ~ .menu {right: 0;}
+}
+#wrapper {
+    width: 85%;
+    height: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    border-radius: 25px;
+    box-shadow: -6px -6px 10px 0px #ffffff, 6px 6px 8px 0px #ceced1;
+}
+
+.showCase {
+    width: 70%;
+}
+
+.showCase .Menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.showCase .Menu .listItem {
+    padding: 10px 32px;
+    border-radius: 5px;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+
+.Menu .menu-item.active {
+    box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1 !important;
+}
+
+.content {
+    flex: 1;
+}
+
+.content-item {
+    display: none;
+}
+
+.content-item.active {
+    display: block;
+}
+
+.content .header {
+    font-size: 30px;
+    font-family: "Playwrite AU VIC", cursive;
+    font-weight: 700;
+    margin-top: 40px;
+    text-shadow: -9px 9px 10px #0000005c;
+    display: flex;
+    justify-content: center;
+}
+
+.home-head {
+    font-family: "Playwrite AU VIC", cursive;
+    font-weight: 200;
+    margin-top: 50px;
+    font-size: 40px;
+    text-shadow: 0px 0px 20px #6a00fa59;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.09em solid rgb(99, 99, 99);
+    animation: typing 2.5s steps(35, end), blink-caret 1s step-end infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: rgb(99, 99, 99);
+    }
+}
+
+.my-details, .bullet-item {
+    margin-top: 30px;
+    font-size: 25px;
+    text-align: justify;
+    color: grey;
+    text-shadow: 1px -1px black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    flex-direction: column;
+}
+
+.bullet-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.bullet-item::before {
+    content: "•";
+    color: #333;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.infoCard {
+    width: 20%;
+    height: auto;
+    padding: 40px;
+    position: fixed;
+    top: 20%;
+    right: 3%;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    border-radius: 25px;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.25s ease;
+}
+
+.infoCard:hover {
+    transform: scale(1.05);
+}
+
+.infoCard .profilePic, .profileName, .fieldBox,
+#socialNav,
+#bigHello {
+    margin-top: 10px;
+}
+
+.infoCard .profilePic {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    position: relative;
+    top: -15px;
+}
+
+.infoCard .profilePic .imageArea {
+    height: calc(100% - 25px);
+    width: calc(100% - 25px);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imageArea img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 46%;
+    transform: scale(2) translate(0, 5%);
+    position: relative;
+    top: 50px;
+    left: 5px;
+}
+
+.infoCard .profileName {
+    font-size: 25px;
+}
+
+.infoCard .fieldBox {
+    font-size: 18px;
+    color: grey;
+}
+
+.infoCard #socialNav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 6px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.infoCard #socialNav .socialItem {
+    border-radius: 50%;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    padding: 10px 12px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.infoCard #socialNav .socialItem:hover,
+.showCase .Menu .listItem:hover {
+    box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+    transition: box-shadow 3s ease-in-out;
+    cursor: pointer;
+}
+
+.socialItem::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3498db;
+    transition: top 0.5s;
+    z-index: 1;
+}
+
+.socialItem.linkedin .background {
+    background: #0077b5;
+}
+
+.socialItem.twitter .background {
+    background: #1da1f2;
+}
+
+.socialItem.instagram .background {
+    background: #e1306c;
+}
+
+.socialItem.whatsapp .background {
+    background: #25d366;
+}
+
+.background {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3498db;
+    transition: top 0.5s;
+    z-index: 1;
+}
+
+.socialItem:hover .background {
+    top: 0;
+}
+
+.socialItem i {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+}
+
+#bigHello {
+    font-size: 30px;
+    font-family: "Playwrite AU VIC", cursive;
+    font-weight: 100;
+    margin-top: 40px;
+    text-shadow: -9px 9px 10px #0000005c;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 1024px) {
+
+    .showCase .Menu {display: none !important;}
+    .infoCard {
+        position: relative;
+        width: 85%;
+        top: 0;
+        right: 0;
+        margin-top: 40px;
+    }
+
+    .infoCard #socialNav {
+        justify-content: space-evenly;
+    }
+
+    .showCase {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .my-details,
+    .bullet-item {
+        font-size: 18px;
+    }
+
+    .home-head {
+        font-size: 30px;
+    }
+
+    .infoCard,
+    .showCase {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .infoCard {
+        padding: 20px;
+        width: 85%;
+        margin-top: 40px;
+    }
+
+    .showCase .Menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 425px) {
+    .home-head{font-size: 22px;}
+}
+@media screen and (max-width: 320px) {
+    .home-head{font-size: 20px;}
+}
